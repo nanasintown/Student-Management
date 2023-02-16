@@ -66,12 +66,16 @@ func actions(student map[string]string){
 
 func populateStudent(s []string) map[string]string{
 	student := make(map[string]string)
-	student["name"] = s[0]
-	student["id"] = s[1]
-	student["status"] = s[2]
-	student["job"] = s[3]
-	student["baseSalary"] = s[4]
-
+	if len(s) != 5{
+		fmt.Println("Invalid input")
+		os.Exit(1)
+	}else{
+		student["name"] = s[0]
+		student["id"] = s[1]
+		student["status"] = s[2]
+		student["job"] = s[3]
+		student["baseSalary"] = s[4]	
+	}
 	return student
 }
 
